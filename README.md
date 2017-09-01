@@ -1,5 +1,4 @@
-[![CircleCI](https://circleci.com/gh/amfleming/skeleton.svg?style=svg)](https://circleci.com/gh/amfleming/skeleton)
-
+[![CircleCI](https://circleci.com/gh/YuhuiDai/skeleton.svg?style=svg)](https://circleci.com/gh/YuhuiDai/skeleton)
 
 skeleton
 ============
