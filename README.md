@@ -1,6 +1,5 @@
 [![CircleCI](https://circleci.com/gh/YuhuiDai/skeleton.svg?style=svg)](https://circleci.com/gh/YuhuiDai/skeleton)
 
-
 skeleton
 ============
 
