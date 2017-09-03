@@ -2,8 +2,10 @@ package dao;
 
 import api.ReceiptResponse;
 import generated.tables.records.ReceiptsRecord;
+
 import org.jooq.Configuration;
 import org.jooq.DSLContext;
+import org.jooq.Result;
 import org.jooq.impl.DSL;
 
 import java.math.BigDecimal;
@@ -26,12 +28,24 @@ public class ReceiptDao {
                 .returning(RECEIPTS.ID)
                 .fetchOne();
 
-        checkState(receiptsRecord != null && receiptsRecord.getId() != null, "Insert failed");
+        checkState(receiptsRecord != null && receiptsRecord.getId() != null, "Insert Receipt failed");
 
         return receiptsRecord.getId();
     }
 
     public List<ReceiptsRecord> getAllReceipts() {
         return dsl.selectFrom(RECEIPTS).fetch();
+    }
+
+    public ReceiptsRecord getReceiptFromID(int id) {
+       return dsl.selectFrom(RECEIPTS)
+                .where(RECEIPTS.ID.eq(id))
+                .fetchOne();
+
+
+    }
+
+    public boolean exists(Integer id){
+        return dsl.fetchExists(RECEIPTS, RECEIPTS.ID.eq(id));
     }
 }
